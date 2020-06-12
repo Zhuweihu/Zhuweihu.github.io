@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/index.min.css">
+	<link rel="stylesheet" href="./css/reset.min.css">
+	<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<!-- 最外层 -->
+	<div class="weather-box">
+		<!-- 系统导航 -->
+		<div class="system"></div>
+		<!-- 搜索 -->
+		<div class="search clearfix">
+			<!-- 左边 -->
+			<div class="fl location">
+				<!-- 左边城市 -->
+				<div class="fl location-text"><!-- 呼和浩特--></div>
+				<!-- 左边图标 -->
+				<div class="fl location-icon"></div>
+			</div>
+			<!-- 右边 -->
+			<div class="fl search-box">
+				<!-- 搜索框 -->
+				<input class="search-ipt fl" type="text">
+				<!-- 搜索图标 -->
+				<span class="search-icon fl"></span>
+			</div>
+		</div>
+		<!-- 显示 -->
+		<div class="temp">
+			<!-- 显示温度 上层-->
+			<div class="temp-num">
+				<!-- 显示度数 -->
+				<div class="num" id="tmp"></div>
+				<!-- 显示天气及温度范围 -->
+				<div class="cloud">
+					<span class="w cloud-left" id="cond_txt"></span>
+					<span class="cloud-right"></span>
+				</div>
+			</div>
+			<!-- 显示其他气象 下层 -->
+			<div class="other-weather">
+				<ul class="clearfix line">
+					<li class="fl other-line">
+						<div class="wind">
+							<div class="w wind-top" id="wind_sc"></div>
+							<div class="w wind-bottom" id="wind_dir"></div>
+						</div>
+					</li>
+					<li class="fl other-line">
+						<div class="visibility">
+							<div class="w visibility-top" id="vis"></div>
+							<div class="visibility-bottom">可见度</div>
+						</div>
+					</li>
+					<li class="fl other-line">
+						<div class="humidity">
+							<div class="w humidity-top" id="hum"></div>
+							<div class="humidity-bottom">相对湿度</div>
+						</div>
+					</li>
+				</ul>
+			</div>	
+			<!-- 预计未来两小时 -->
+			<div class="predict">
+				<span id="txt">未来两小时无降水</span>
+			</div>
+		</div>
+		<!-- 标题 -->
+		<!-- 逐日预告 -->
+		<!-- 逐时预告 -->
+		<div class="wether">
+			<div class="weather-day cn" data-type="daily_forecast">逐<span>日预</span>告</div>
+			<div class="weather-hour cn" data-type="hourly">逐<span>时预</span>告</div>
+		</div>
+		<div class="wether-bagao">
+			<!-- 逐日预告 -->
+			<ul class="baogao-day">
+				<li class="baogao-item">
+					<div class="day" id="date">06-08</div>
+					<div class="day-cloud" id="cond_txt_d">阴</div>
+					<div class="day-cloud-icon" id="cond_code_d"></div>
+					<div class="day-temp">28°~36°</div>
+				</li>
+				<li class="baogao-item">
+					<div class="day" id="date">06-09</div>
+					<div class="day-cloud" id="cond_txt_d">阴</div>
+					<div class="day-cloud-icon" id="cond_code_d"></div>
+					<div class="day-temp">28°~35°</div>
+				</li>
+				<li class="baogao-item">
+					<div class="day" id="date">06-10</div>
+					<div class="day-cloud" id="cond_txt_d">阴</div>
+					<div class="day-cloud-icon" id="cond_code_d"></div>
+					<div class="day-temp">28°~36°</div>
+				</li>
+				<li class="baogao-item">
+					<div class="day" id="date">06-11</div>
+					<div class="day-cloud" id="cond_txt_d">多云</div>
+					<div class="day-cloud-icon" id="cond_code_d"></div>
+					<div class="day-temp">27°~34°</div>
+				</li>
+				<li class="baogao-item">
+					<div class="day" id="date">06-12</div>
+					<div class="day-cloud" id="cond_txt_d">阵雨</div>
+					<div class="day-cloud-icon" id="cond_code_d"></div>
+					<div class="day-temp">27°~34°</div>
+				</li>
+			</ul>
+			<!-- 逐时预告 -->
+			<ul class="baogao-hour">
+				<li class="baogao-item">
+					<div class="hour" id="time">16:00</div>
+					<div class="hour-cloud" id="cond_txt">阴</div>
+					<div class="hour-cloud-icon"></div>
+					<div class="hour-temp" id="tmp">34°</div>
+				</li>
+				<li class="baogao-item">
+					<div class="hour" id="time">17:00</div>
+					<div class="hour-cloud" id="cond_txt">阴</div>
+					<div class="hour-cloud-icon"></div>
+					<div class="hour-temp" id="tmp">33°</div>
+				</li>
+				<li class="baogao-item">
+					<div class="hour" id="time">18:00</div>
+					<div class="hour-cloud" id="cond_txt">阴</div>
+					<div class="hour-cloud-icon"></div>
+					<div class="hour-temp" id="tmp">32°</div>
+				</li>
+				<li class="baogao-item">
+					<div class="hour" id="time">19:00</div>
+					<div class="hour-cloud" id="cond_txt">阴</div>
+					<div class="hour-cloud-icon"></div>
+					<div class="hour-temp" id="tmp">31°</div>
+				</li>
+				<li class="baogao-item">
+					<div class="hour" id="time">20:00</div>
+					<div class="hour-cloud" id="cond_txt">多云</div>
+					<div class="hour-cloud-icon"></div>
+					<div class="hour-temp" id="tmp">30°</div>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+	<script src="./js/jquery-3.5.1.min.js"></script>
+	<script src="./js/rem.js"></script>
+	<script src="./js/index.js"></script>
+</body>
+</html>

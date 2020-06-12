@@ -1,0 +1,231 @@
+@import "./variable";
+
+
+.weather-box{
+	color: @fontColor;
+}
+.morning{
+	background-image: linear-gradient(
+		to bottom,
+		#5476fe,
+		#6fb1ff,
+	);
+}
+.afternoon{
+	background-image: linear-gradient(
+		to bottom, 
+		#FD7537, 
+		#FFAB53);
+}
+.night{
+	background-image: linear-gradient(
+		to bottom, 
+		#4B36FF, 
+		#B560FB);
+}
+//一行文本溢出截断，以省略号方式显示
+.one-text{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+//100px = 1rem
+.icon-box(@imgName){
+	width: .24rem;
+	height: .24rem;
+	background: url(@imgName) no-repeat center center;
+	background-size: cover;
+	margin-top: .03rem;
+}
+.weather-box{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	.system{
+		position: sticky;
+		top: 0;
+		height: .24rem;
+	}
+	.search{
+		padding: .1rem;
+
+		.location{
+			width: 1rem;
+			height: .3rem;
+		}
+
+		.search-box{
+			width: calc(~"100% - 1.5rem");
+			height: .3rem;
+			margin-left: .2rem;
+			padding: 0 .15rem;
+			border-radius: .15rem;
+			background-image: linear-gradient(
+				to right,
+				rgba(255, 255, 255, .2),
+				rgba(255, 255, 255, .65)
+			);
+		}
+	
+		.location-text{
+			font-size: .16rem;
+			line-height: .3rem;
+			width: .76rem;
+			.one-text;
+		}
+		.location-icon{
+			.icon-box("@{url}/location.png");
+		}
+		.search-icon{
+			.icon-box("@{url}/search.png");
+		}
+		.search-ipt{
+			width: calc(~"100% - .24rem");
+			height: .3rem;
+			color: @fontColor;
+		}
+	}
+	.temp{
+		margin-top: .2rem;
+		width: 100%;
+		height: 3rem;
+		// background-color: orange;
+		color: @fontColor;
+		// 显示温度 上层
+		.temp-num{
+			width: 100%;
+			height: 1.3rem;
+			// background-color: yellow;
+		}
+		// 显示度数
+		.num{
+			font-size: .5rem;
+			width: 100%;
+			height: 1rem;
+			line-height: 1rem;
+			text-align: center;
+			// background-color: pink;
+		}
+		// 显示天气及温度范围
+		.cloud{
+			width: 100%;
+			height: .3rem;
+			// background-color: red;
+			line-height: .3rem;
+			text-align: center;
+			font-size: .14rem;
+		}
+		.cloud-right{
+			display: inline-block;
+			margin-left: .12rem;
+		}
+
+		// 显示其他气象 下层
+		.other-weather{
+			width: 100%;
+			height: 1.1rem;
+			// background-color: pink;
+			margin: 0 auto;
+			overflow: hidden;
+			
+		}
+		.line{
+			margin-left: .375rem;
+		}
+		.other-line{
+			width: 1rem;
+			// background-color: yellow;
+			text-align: center;
+			height: 0.8rem;
+			padding-top: .295rem;
+			
+		}
+		.wind{
+			border-right: 1px solid @fontColor;
+		}
+		.visibility{
+			border-right: 1px solid @fontColor;
+		}
+		.predict{
+			width: 100%;
+			height: 0.6rem;
+			// background-color: pink;
+			text-align: center;
+		}
+	}
+	//标题
+	.wether{
+		width: 100%;
+		height: 0.8rem;
+		// background-color: pink;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+	.weather-day{
+		width: 0.9rem;
+		>span{
+			// border-bottom: 0.02rem solid transparent;
+			border-bottom: 0.02rem solid @fontColor;
+			padding-bottom: 0.06rem;	
+		}
+		
+	}
+	.weather-hour{
+		width: 0.9rem;
+		>span{
+			border-bottom: 0.02rem solid transparent;
+			// border-bottom: 0.02rem solid @fontColor;
+			padding-bottom: 0.06rem;	
+		}
+	}
+	.wether-bagao{
+		width: 100%;
+		height: 2rem;
+		// background-color: orange;
+		font-size: .14rem;
+	}
+	.baogao-day{
+		width: 100%;
+		height: 2rem;
+		display: flex;
+		// overflow: hidden;
+	}
+	.baogao-hour{
+		width: 100%;
+		height: 2rem;
+		display: flex;
+		// overflow: hidden;
+	}
+	.baogao-item{
+		flex: 1;
+		text-align: center;
+	}
+	.day-cloud{
+		
+		margin-bottom: .2rem;
+	}
+	.hour-cloud{
+		margin-bottom: .2rem;
+	}
+	.day-cloud-icon{
+		margin: 0 auto;
+		width: 0.35rem;
+		height: 0.35rem;
+		margin-bottom: .2rem;
+		// background: url(../condIconHeweather/101.png) no-repeat center center;
+		background-size: cover;
+	}
+	.hour-cloud-icon{
+		margin: 0 auto;
+		width: 0.35rem;
+		height: 0.35rem;
+		margin-bottom: .2rem;
+		// background: url(../condIconHeweather/101.png) no-repeat center center;
+		background-size: cover;
+	}
+}
